@@ -1,0 +1,317 @@
+$breakpoints: (
+ "pc": 1024px,
+ //1025px以上はPC幅(今回は1440pxでデザインされているので、1025px~1440pxがPC幅//
+ "tb": 600px,
+ //600px~1024pxはタブレット幅//
+ "sp": 350px //350px~599pxがスマホ幅
+ //350pxまでのレスポンシブ画面は作る。
+);
+
+@mixin mq($breakpoint) {
+ @if map-has-key($breakpoints, $breakpoint) {
+  @media (max-width: map-get($breakpoints, $breakpoint)) {
+   @content;
+  }
+ }
+
+ @else {
+  @error "Breakpoint `#{$breakpoint}` not found in $breakpoints";
+ }
+}
+#wpadminbar {
+ top: auto;
+ bottom: 0;
+}
+
+html {
+ margin: 0 !important;
+}
+body{
+ height: 10000px;
+}
+// PCヘッダー
+.header {
+ margin: 20px 2.5%; //margin: 20px;だと中央揃えならない。
+ border-radius: 50px;
+ border: 1px solid #000000;
+ font-size: 16px;
+ padding: 10px 25px;
+ position: fixed;
+ width: 95%;
+ background-color: #FFFFFF;
+ z-index: 1000;
+ @include mq(pc) {
+  border: none;
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  height: 70px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  background-color: #FFFFFF;
+ }
+}
+
+.header__inner {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+
+ width: 100%;
+
+ @include mq(pc) {
+  // display: none;
+  // position: relative;
+  position: fixed;
+  top: 0;
+ }
+
+}
+
+.header__logo {
+ display: flex;
+ align-items: center;
+ margin: 1%;
+ width: 100%;
+
+ @include mq(pc) {
+  margin: 20px;
+ }
+}
+
+.menu {
+ width: 100%
+}
+
+.menu-header {
+ @include mq(pc) {
+  display: none;
+ }
+
+}
+
+.menu__list {
+ display: flex;
+ white-space: nowrap;
+ width: 100%
+}
+
+.menu__item-link {
+ display: block;
+ margin: 5px;
+ padding: 15px;
+ border-radius: 50px;
+}
+
+.menu__item--q {
+ display: block;
+ color: #FFFFFF;
+ background-color: #F7B560;
+}
+
+
+// スマホヘッダー
+.menu-box {
+ display: none;
+
+ @include mq(pc) {
+  display: block;
+  position: absolute;
+  top: 15px;
+  right: 0;
+  margin: 0 10px 0 0;
+ }
+}
+// ハンバーガー
+.hamburger {
+ cursor: pointer;
+ display: flex;
+ flex-direction: column;
+ gap: 5px;
+ width: 50px;
+ position: relative;
+ /* 親要素の基準を設定 */
+ height: 30px;
+ margin: 0 auto;
+}
+
+.hamburger span {
+ display: block;
+ height: 4px;
+ background-color: #93C572;
+ border-radius: 2px;
+ width: 100%;
+ transition: all 0.3s ease;
+ margin: 2px;
+}
+
+/* ハンバーガーが閉じるときのスタイル */
+.close span:nth-of-type(1) {
+ transform: rotate(15deg);
+ position: absolute;
+ top: 5px; //×になった時の高さはこれがいい。起点はhamburgerのposition:relative;
+ /* 上下中央に重なる */
+ left: 0;
+ width: 100%;
+}
+
+.close span:nth-of-type(2) {
+ transform: rotate(-15deg);
+ position: absolute;
+ top: 5px;
+ /* 上下中央に重なる */
+ left: 0;
+ width: 100%;
+}
+
+
+.menu p {
+ font-size: 20px;
+ color: #93C572;
+}
+
+.menu__inner {
+ opacity: 0;
+ visibility: hidden;
+ inset: 0;
+ transition: 0.3s ease;
+ margin-top: 15px;
+}
+
+// // // new pcーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+.sp-menu {
+ position: absolute;
+ top: 70px;
+ width: 100%;
+ height: calc(100vh - 70px);
+ background-color: #F9F9F9;
+ z-index: 999;
+ transition: opacity 0.3s ease-in-out;
+ opacity: 0;
+ display: none;
+ flex-direction: column;
+ align-items: center;
+ // gap: 10%;
+}
+
+.sp-menu.is-active {
+ display: flex;
+ opacity: 1;
+}
+
+.sp-menu__inner {
+ width: 100%;
+}
+
+.sp-menu__list {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ width: 100%;
+ margin: 0 20px;
+}
+
+.sp-menu__item {
+ width: 100%;
+ border-bottom: 1px solid #93C572;
+ padding: 2%;
+ display: flex;
+ flex-direction: column;
+ position: relative;
+ gap: 5px;
+
+ @include mq(tb) {
+  padding: 5%;
+ }
+}
+
+.sp-menu__item::after,
+.sp-menu__item::before {
+ content: "";
+ display: block;
+ height: 2px;
+ background-color: #93C572;
+ position: absolute;
+ right: 50px;
+}
+
+.sp-menu__item::before {
+ top: calc(50% + 6px);
+ /* 少しずらす */
+ width: 30px;
+}
+
+.sp-menu__item::after {
+ transform: rotate(45deg);
+ /* 右斜め線 */
+ top: 50%;
+ width: 13px;
+}
+
+.sp-menu__item--txt {
+ display: flex;
+ gap: 20px;
+ align-items: center;
+
+}
+
+.sp-menu__item--txt span:nth-child(1) {
+ font-size: 20px;
+}
+
+.sp-menu__item--txt span:nth-child(2) {
+ font-size: 14px;
+ color: #F7B560;
+}
+
+.sp-menu__cta {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ color: #93C572;
+ width: 100%;
+ font-weight: bold;
+ flex: 1;
+ justify-content: center;
+}
+
+.sp-menu__tel {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 5px;
+ margin-bottom: 3%;
+}
+
+.sp-menu__tel p:nth-child(2) {
+ font-weight: bold;
+ font-size: 20px;
+
+}
+
+.sp-menu__time {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 5px;
+ margin-bottom: 3%;
+}
+
+.sp-menu__item--q {
+ display: block;
+ color: #FFFFFF;
+ background-color: #F7B560;
+ width: 80%;
+ margin: 5px;
+ padding: 15px;
+ border-radius: 50px;
+}
+
+.sp-menu__item--txt-q {
+ text-align: center;
+
+}

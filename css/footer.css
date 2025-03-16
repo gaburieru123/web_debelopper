@@ -1,0 +1,216 @@
+@charset "UTF-8";
+@media (max-width: 1024px) {
+  .footer-pc {
+    display: none;
+  }
+}
+
+.fotter {
+  font-size: 16px;
+  margin: 0 auto;
+  padding: 20px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer__container {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 50%;
+}
+
+/* footer__logoとfooter__companyを縦並び */
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  justify-content: space-between;
+  gap: 50%;
+}
+
+/* menu__items-pcとsocial-iconsを縦並び */
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  gap: 50%;
+  justify-content: space-between;
+}
+
+/* menu__item-pcを横並び */
+.footer__menu__items-pc {
+  display: flex;
+  gap: 25px;
+  white-space: nowrap;
+}
+
+.footer__menu__item-link {
+  display: block;
+  border-radius: 50px;
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* social-iconを横並び */
+.social-icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  /* アイコン間の余白 */
+}
+
+.social-icon {
+  width: 60px;
+  /* 円のサイズ */
+  height: 60px;
+  /* 円のサイズ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  /* 背景色 */
+  border-radius: 50%;
+  /* 丸くする */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* 影をつける */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  /* 下線を消す */
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+  /* ホバー時に少し浮く */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  /* ホバー時の影 */
+}
+
+.social-icon img {
+  width: 50%;
+  /* アイコンのサイズ */
+  height: auto;
+}
+
+.footer__copyright {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.footer-sp {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .footer-sp {
+    display: block;
+  }
+}
+
+.fotter--sp {
+  width: 100%;
+  height: 700px;
+  padding: 0 30px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #555555;
+}
+
+.footer__container--sp {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.footer__inner--sp {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.footer__logo--sp img {
+  max-width: 150px;
+  height: auto;
+}
+
+.logo--sp img {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+}
+
+.footer__menu__items--sp {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.footer__menu__items--sp a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer__menu__item--sp {
+  padding: 5px 0;
+}
+
+.footer__bottom--sp {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* social-iconを横並び */
+.social-icons--sp {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  /* アイコン間の余白 */
+}
+
+.social-icon--sp {
+  width: 60px;
+  /* 円のサイズ */
+  height: 60px;
+  /* 円のサイズ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  /* 背景色 */
+  border-radius: 50%;
+  /* 丸くする */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* 影をつける */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  /* 下線を消す */
+}
+
+.social-icon--sp:hover {
+  transform: translateY(-3px);
+  /* ホバー時に少し浮く */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  /* ホバー時の影 */
+}
+
+.social-icon--sp img {
+  width: 50%;
+  /* アイコンのサイズ */
+  height: auto;
+}
+
+.footer__copyright--sp {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #666;
+}
+/*# sourceMappingURL=footer.css.map */

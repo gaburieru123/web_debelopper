@@ -1,0 +1,471 @@
+$breakpoints: (
+ "pc": 1024px,
+ //1025px以上はPC幅(今回は1440pxでデザインされているので、1025px~1440pxがPC幅//
+ "tb": 600px,
+ //600px~1024pxはタブレット幅//
+ "sp": 350px //350px~599pxがスマホ幅
+ //350pxまでのレスポンシブ画面は作る。
+);
+
+@mixin mq($breakpoint) {
+ @if map-has-key($breakpoints, $breakpoint) {
+  @media (max-width: map-get($breakpoints, $breakpoint)) {
+   @content;
+  }
+ }
+
+ @else {
+  @error "Breakpoint `#{$breakpoint}` not found in $breakpoints";
+ }
+}
+
+.about {
+ background-color: #F9F9F9;
+
+ &__container {
+  position: relative;
+  width: 100%;
+  // min-height: 100vh;
+  margin: 45px 0 58px 0;
+  height: 703px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // margin: 0 auto;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // margin: 45px 203px 53px;
+ }
+
+ // &__bg-images{
+ //  // position: relative;
+ //  // width: 100%;
+ //  // height: 100%;
+ //  display: flex;
+ //  justify-content: center;
+ //  align-items: center;
+
+ // }
+
+ // &__bg-image{
+ //  // position: absolute;
+ //  // width: 100%;
+ //  // height: 100%;
+ // }
+
+ &__bg-image--1 {
+  position: absolute;
+  // top: 45px;
+  top: 0px;
+  // left: 203px;
+  left: 0px;
+  // width: 200px;
+
+  width: 20.8333333333%;
+
+  @include mq(pc) {
+   left: 19px;
+   width: 83px;
+  }
+ }
+
+ &__bg-image--2 {
+  position: absolute;
+  // top: 93px;
+  top: 48px;
+  // right: 203px;
+  right: 0px;
+  width: 200px;
+
+  @include mq(pc) {
+   top: 11px;
+   right: 28px;
+   width: 57px;
+  }
+ }
+
+ &__bg-image--3 {
+  position: absolute;
+  bottom: 69px;
+  // left: 312px;
+  left: 109px;
+  width: 200px;
+
+  @include mq(pc) {
+   left: 31px;
+   bottom: 27px;
+   width: 86px;
+  }
+ }
+
+ &__bg-image--4 {
+  position: absolute;
+  bottom: 0px;
+  // right: 240px;
+  right: 37px;
+  width: 200px;
+
+  @include mq(pc) {
+   bottom: 0px;
+   right: 33px;
+   width: 92px;
+  }
+ }
+
+ // &__bg-image img {
+ //  // position: absolute;
+ //  width: 100%;
+ //  // height: 100%;
+ // }
+
+ &__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: center;
+  // min-height: 100vh;
+  padding: 0 15%;
+  z-index: 2;
+  gap: 57px;
+  position: absolute;
+  top: 114px;
+
+  @include mq(pc) {
+   padding: 0 15%;
+  }
+ }
+
+ &__logo img {
+  width: 314px;
+
+  @include mq(pc) {
+   width: 232px;
+  }
+ }
+
+ &__text {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  text-align: center;
+  font: normal normal bold 16px/32px YuGothic;
+  letter-spacing: 0px;
+  color: #555555;
+  opacity: 1;
+ }
+
+
+
+}
+
+
+// /* 共通のスタイル */
+// .about__container {
+//  position: relative;
+//  width: 100%;
+//  min-height: 100vh;
+// }
+
+// .about__content {
+//  position: relative;
+//  z-index: 2;
+//  display: flex;
+//  flex-direction: column;
+//  align-items: center;
+//  justify-content: center;
+//  min-height: 100vh;
+//  padding: 20px;
+// }
+
+// .about__bg-images {
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//  width: 100%;
+//  height: 100%;
+// }
+
+// .about__bg-image {
+//  position: absolute;
+//  opacity: 0; /* 初期状態は非表示 */
+//  width: 100%;
+//  height: 100%;
+// }
+
+// .about__bg-image--1 { top: 0; left: 0; }
+// .about__bg-image--2 { top: 0; right: 0; }
+// .about__bg-image--3 { bottom: 0; left: 0; }
+// .about__bg-image--4 { bottom: 0; right: 0; }
+
+// /* PC用スタイル */
+// @media (min-width: 768px) {
+//  .about__logo {
+//    width: 200px; /* ロゴの幅指定 */
+//    margin-bottom: 30px;
+//  }
+
+//  .about__text {
+//    width: 80%;
+//    max-width: 600px;
+//    margin-bottom: 20px;
+//  }
+// }
+
+// /* スマートフォン用スタイル */
+// @media (max-width: 767px) {
+//  .about__logo {
+//    width: 150px; /* スマホ用ロゴの幅指定 */
+//    margin-bottom: 20px;
+//  }
+
+//  .about__text {
+//    width: 90%;
+//    margin-bottom: 15px;
+//  }
+// }
+
+
+
+
+
+
+
+
+
+// // $breakpoints: (
+// //  "pc": 1024px,
+// //  //1025px以上はPC幅(今回は1440pxでデザインされているので、1025px~1440pxがPC幅//
+// //  "tb": 600px,
+// //  //600px~1024pxはタブレット幅//
+// //  "sp": 350px //350px~599pxがスマホ幅
+// //  //350pxまでのレスポンシブ画面は作る。
+// // );
+
+// // @mixin mq($breakpoint) {
+// //  @if map-has-key($breakpoints, $breakpoint) {
+// //   @media (max-width: map-get($breakpoints, $breakpoint)) {
+// //    @content;
+// //   }
+// //  }
+
+// //  @else {
+// //   @error "Breakpoint `#{$breakpoint}` not found in $breakpoints";
+// //  }
+// // }
+
+// // /* 共通のスタイル */
+// // .about__container {
+// //  position: relative;
+// //  width: 100%;
+// //  min-height: 100vh;
+// // }
+
+// // .about__content {
+// //  position: relative;
+// //  z-index: 2;
+// //  display: flex;
+// //  flex-direction: column;
+// //  align-items: center;
+// //  justify-content: center;
+// //  min-height: 100vh;
+// //  padding: 20px;
+// // }
+
+// // .about__bg-images {
+// //  position: absolute;
+// //  top: 0;
+// //  left: 0;
+// //  width: 100%;
+// //  height: 100%;
+// // }
+
+// // .about__bg-image {
+// //  position: absolute;
+// //  // opacity: 0; /* 初期状態は非表示 */
+// //  width: 100%;
+// //  height: 100%;
+// // }
+
+// // .about__bg-image--1 { top: 0; left: 0; }
+// // .about__bg-image--2 { top: 0; right: 0; }
+// // .about__bg-image--3 { bottom: 0; left: 0; }
+// // .about__bg-image--4 { bottom: 0; right: 0; }
+
+// // /* PC用スタイル */
+// // @media (min-width: 768px) {
+// //  .about__logo {
+// //    width: 200px; /* ロゴの幅指定 */
+// //    margin-bottom: 30px;
+// //  }
+
+// //  .about__text {
+// //    width: 80%;
+// //    max-width: 600px;
+// //    margin-bottom: 20px;
+// //  }
+// // }
+
+// // /* スマートフォン用スタイル */
+// // @media (max-width: 767px) {
+// //  .about__logo {
+// //    width: 150px; /* スマホ用ロゴの幅指定 */
+// //    margin-bottom: 20px;
+// //  }
+
+// //  .about__text {
+// //    width: 90%;
+// //    margin-bottom: 15px;
+// //  }
+// // }
+
+
+
+// // _about.scssからコピペ
+// .about {
+//  background-color: #F9F9F9;
+
+//  &__container {
+//   // background-color: yellowgreen;
+//   position: relative;
+//   width: 100%;
+//   min-height: 100vh;
+//  }
+
+//  &__bg-images {
+//   // position: relative;
+//   // width: 100%;
+//   // height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+//  }
+
+//  // &__bg-image{
+//  //  // position: absolute;
+//  //  // width: 100%;
+//  //  // height: 100%;
+//  // }
+
+//  &__bg-image img {
+//   // position: absolute;
+//   width: 100%;
+//   // height: 100%;
+//  }
+
+//  &__bg-image--1 {
+//   position: absolute;
+//   top: 45px;
+//   left: 203px;
+//   width: 200px;
+
+//  }
+
+//  &__bg-image--2 {
+//   position: absolute;
+//   top: 48px;
+//   right: 203px;
+//   width: 200px;
+//  }
+
+//  &__bg-image--3 {
+//   position: absolute;
+//   bottom: 45px;
+//   left: 203px;
+//   width: 200px;
+//  }
+
+//  &__bg-image--4 {
+//   position: absolute;
+//   bottom: 48px;
+//   right: 203px;
+//   width: 200px;
+//  }
+
+//  &__bg-image img {
+//   // position: absolute;
+//   width: 100%;
+//   // height: 100%;
+//  }
+
+
+//  &__content {
+//   position: relative;
+//   z-index: 2;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   min-height: 100vh;
+//   padding: 20px;
+//  }
+
+
+// }
+
+
+// // /* 共通のスタイル */
+// // .about__container {
+// //  position: relative;
+// //  width: 100%;
+// //  min-height: 100vh;
+// // }
+
+// // .about__content {
+// //  position: relative;
+// //  z-index: 2;
+// //  display: flex;
+// //  flex-direction: column;
+// //  align-items: center;
+// //  justify-content: center;
+// //  min-height: 100vh;
+// //  padding: 20px;
+// // }
+
+// // .about__bg-images {
+// //  position: absolute;
+// //  top: 0;
+// //  left: 0;
+// //  width: 100%;
+// //  height: 100%;
+// // }
+
+// // .about__bg-image {
+// //  position: absolute;
+// //  opacity: 0; /* 初期状態は非表示 */
+// //  width: 100%;
+// //  height: 100%;
+// // }
+
+// // .about__bg-image--1 { top: 0; left: 0; }
+// // .about__bg-image--2 { top: 0; right: 0; }
+// // .about__bg-image--3 { bottom: 0; left: 0; }
+// // .about__bg-image--4 { bottom: 0; right: 0; }
+
+// // /* PC用スタイル */
+// // @media (min-width: 768px) {
+// //  .about__logo {
+// //    width: 200px; /* ロゴの幅指定 */
+// //    margin-bottom: 30px;
+// //  }
+
+// //  .about__text {
+// //    width: 80%;
+// //    max-width: 600px;
+// //    margin-bottom: 20px;
+// //  }
+// // }
+
+// // /* スマートフォン用スタイル */
+// // @media (max-width: 767px) {
+// //  .about__logo {
+// //    width: 150px; /* スマホ用ロゴの幅指定 */
+// //    margin-bottom: 20px;
+// //  }
+
+// //  .about__text {
+// //    width: 90%;
+// //    margin-bottom: 15px;
+// //  }
+// // }

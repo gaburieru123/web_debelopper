@@ -1,0 +1,232 @@
+@charset "UTF-8";
+.main {
+  background-color: #F9F9F9;
+  margin: 0 auto;
+  width: 70.2781844802%;
+}
+@media (max-width: 1024px) {
+  .main {
+    padding-top: 70px;
+    z-index: 1;
+    width: 100%;
+  }
+}
+
+.fv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url("../images/img/FV.jpg");
+  background-size: cover;
+  position: relative;
+  margin: 0 calc(50% - 50vw);
+}
+@media (max-width: 1024px) {
+  .fv {
+    flex-direction: row;
+    font-size: 30px;
+    font-weight: normal;
+    width: 100%;
+    height: calc(100vh - 70px);
+  }
+}
+.fv__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 10px;
+  background-repeat: no-repeat;
+  font-size: 50px;
+  font-weight: bold;
+  color: #93c572;
+}
+@media (max-width: 1024px) {
+  .fv__content {
+    width: 100%;
+    flex-direction: row;
+    font-weight: normal;
+    justify-content: space-around;
+    margin: 0 20px;
+    gap: 17px;
+  }
+}
+@media (max-width: 1024px) {
+  .fv__logo {
+    width: 73px;
+    height: 56px;
+    /* UI Properties */
+    opacity: 1;
+  }
+}
+.fv-text {
+  font-family: "Archivo Narrow", sans-serif;
+  color: #87B16C;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3019607843);
+}
+@media (max-width: 1024px) {
+  .fv-text {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3019607843);
+    text-align: center;
+    font: normal normal bold 25px/37px YuGothic;
+    letter-spacing: 3.75px;
+    opacity: 1;
+  }
+}
+.fv__scrolldown {
+  position: absolute;
+  bottom: 1%;
+  right: 50%;
+  -webkit-animation: arrowmove 2s ease-in-out infinite;
+          animation: arrowmove 2s ease-in-out infinite;
+}
+@media (max-width: 1024px) {
+  .fv__scrolldown {
+    display: none;
+  }
+}
+.fv__scrolldown a {
+  position: absolute;
+  left: -35px;
+  bottom: 80px;
+  font-size: 14px;
+  font-family: "Josefin Sans", sans-serif;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+.fv__scrolldown::before {
+  content: "";
+  position: absolute;
+  bottom: 1px;
+  right: -8px;
+  width: 2px;
+  height: 25px;
+  background: #FFFFFF;
+  transform: rotate(45deg);
+}
+.fv__scrolldown::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  width: 2px;
+  height: 65px;
+  background: #FFFFFF;
+}
+@-webkit-keyframes arrowmove {
+  0% {
+    bottom: 1%;
+  }
+  50% {
+    bottom: 5%;
+  }
+  100% {
+    bottom: 1%;
+  }
+}
+@keyframes arrowmove {
+  0% {
+    bottom: 1%;
+  }
+  50% {
+    bottom: 5%;
+  }
+  100% {
+    bottom: 1%;
+  }
+}
+.fv__news {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  border-radius: 15px;
+  width: 25%;
+  background-color: #f7b560;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  padding: 14px 0 18px 15px;
+  width: 337px;
+  height: 109px;
+  /* UI Properties */
+  background: #F7B560 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+  border-radius: 20px;
+  opacity: 1;
+  justify-content: center;
+  gap: 3px;
+}
+@media (max-width: 600px) {
+  .fv__news {
+    left: 20px;
+    gap: 0px;
+    width: 142px;
+    height: 76px;
+    padding: 8px 10px;
+  }
+}
+.fv__news__content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (max-width: 1024px) {
+  .fv__news__content {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+.fv__news__content-ttl {
+  text-align: left;
+  font: normal normal 600 20px/12px Archivo Narrow;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+  opacity: 1;
+  height: 27px;
+}
+@media (max-width: 1024px) {
+  .fv__news__content-ttl {
+    font-size: 14px;
+  }
+}
+.fv__news__content-ttl::first-letter {
+  text-transform: uppercase;
+}
+.fv__news__date {
+  color: var(--unnamed-color-ffffff);
+  text-align: left;
+  font: normal normal normal 12px/12px Archivo Narrow;
+  letter-spacing: 0.6px;
+  color: #FFFFFF;
+  opacity: 1;
+}
+@media (max-width: 1024px) {
+  .fv__news__date {
+    font-size: 10px;
+  }
+}
+.fv__news__ttl {
+  color: var(--unnamed-color-ffffff);
+  text-align: left;
+  font: normal normal bold 16px/12px YuGothic;
+  letter-spacing: 0.8px;
+  color: #FFFFFF;
+  opacity: 1;
+}
+@media (max-width: 1024px) {
+  .fv__news__ttl {
+    font-size: 12px;
+  }
+}
+
+.fv__news {
+  transition: opacity 0.5s ease-in-out;
+  /* スムーズなフェード */
+}
+/*# sourceMappingURL=front-page.css.map */

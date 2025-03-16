@@ -1,0 +1,40 @@
+* {
+ margin: 0;
+ padding: 0;
+ color: #555555;
+}
+
+a {
+ margin: 0;
+ padding: 0;
+}
+
+img {
+ max-width: 100%;
+ height: auto;
+}
+
+li {
+ list-style: none;
+}
+
+$breakpoints: (
+ "pc": 1024px,
+ //1025px以上はPC幅(今回は1440pxでデザインされているので、1025px~1440pxがPC幅//
+ "tb": 600px,
+ //769px~1024pxはタブレット幅//
+ "sp": 350px //751px~768pxがスマホ幅
+ //350pxまでのレスポンシブ画面は作る。
+);
+
+@mixin mq($breakpoint) {
+ @if map-has-key($breakpoints, $breakpoint) {
+  @media (max-width: map-get($breakpoints, $breakpoint)) {
+   @content;
+  }
+ }
+
+ @else {
+  @error "Breakpoint `#{$breakpoint}` not found in $breakpoints";
+ }
+}
