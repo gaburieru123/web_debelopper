@@ -153,6 +153,7 @@
 <script src="<?php echo get_theme_file_uri('js/hamburger.js'); ?>"></script>
 <script src="<?php echo get_theme_file_uri('js/front-page.js'); ?>"></script>
 <script src="<?php echo get_theme_file_uri('js/about.js'); ?>"></script>
+<script src="<?php echo get_theme_file_uri('js/activity.js'); ?>"></script>
 </body>
 
 </html>

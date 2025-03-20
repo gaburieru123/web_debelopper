@@ -60,6 +60,7 @@ body {
   .header__inner {
     position: fixed;
     top: 0;
+    justify-content: space-between;
   }
 }
 
@@ -288,7 +289,7 @@ body {
 .sp-menu__item {
   width: 100%;
   border-bottom: 1px solid #93C572;
-  padding: 4%;
+  padding: 2%;
   display: flex;
   flex-direction: column;
   position: relative;

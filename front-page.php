@@ -2,6 +2,7 @@
 <main class="main">
 <?php get_template_part("template_parts/fv") ?>
 <?php get_template_part("template_parts/about") ?>
+<?php get_template_part("template_parts/activity") ?>
  <!-- <div class="fv">
   <img src="</?php echo get_template_directory_uri(); ?>/images/img/logo-2.svg" alt="ファースビューのロゴ" class="fv-logo">
  </div> -->

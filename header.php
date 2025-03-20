@@ -39,6 +39,7 @@
  <link href="<?php echo get_template_directory_uri(); ?>/css/front-page.css" rel="stylesheet" />
  <link href="<?php echo get_template_directory_uri(); ?>/css/archive-news.css" rel="stylesheet" />
  <link href="<?php echo get_template_directory_uri(); ?>/css/about.css" rel="stylesheet" />
+ <link href="<?php echo get_template_directory_uri(); ?>/css/activity.css" rel="stylesheet" />
  <link href="<?php echo get_template_directory_uri(); ?>/css/footer.css" rel="stylesheet" />
 
  <!-- <?php if (is_post_type_archive('news_category')) : ?>

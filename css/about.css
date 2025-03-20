@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .about {
   background-color: #F9F9F9;
 }
@@ -10,6 +11,12 @@
   align-items: center;
   justify-content: center;
 }
+.about__bg-image img {
+  opacity: 0;
+  /* 初期状態は非表示 */
+  transition: opacity 0.3s;
+  /* すぐ消えるように */
+}
 .about__bg-image--1 {
   position: absolute;
   top: 0px;
@@ -19,46 +26,42 @@
 @media (max-width: 1024px) {
   .about__bg-image--1 {
     left: 19px;
-    width: 83px;
   }
 }
 .about__bg-image--2 {
   position: absolute;
   top: 48px;
   right: 0px;
-  width: 200px;
+  width: 18.8541666667%;
 }
 @media (max-width: 1024px) {
   .about__bg-image--2 {
     top: 11px;
     right: 28px;
-    width: 57px;
   }
 }
 .about__bg-image--3 {
   position: absolute;
   bottom: 69px;
   left: 109px;
-  width: 200px;
+  width: 20.8333333333%;
 }
 @media (max-width: 1024px) {
   .about__bg-image--3 {
     left: 31px;
     bottom: 27px;
-    width: 86px;
   }
 }
 .about__bg-image--4 {
   position: absolute;
   bottom: 0px;
   right: 37px;
-  width: 200px;
+  width: 23.125%;
 }
 @media (max-width: 1024px) {
   .about__bg-image--4 {
     bottom: 0px;
     right: 33px;
-    width: 92px;
   }
 }
 .about__content {
@@ -74,6 +77,9 @@
 @media (max-width: 1024px) {
   .about__content {
     padding: 0 15%;
+    gap: 30px;
+    justify-content: center;
+    position: static;
   }
 }
 .about__logo img {
@@ -89,9 +95,22 @@
   flex-direction: column;
   gap: 25px;
   text-align: center;
-  font: normal normal bold 16px/32px YuGothic;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 32px;
+  font-family: YuGothic;
   letter-spacing: 0px;
   color: #555555;
   opacity: 1;
+}
+.about__text p {
+  white-space: nowrap;
+}
+@media (max-width: 1024px) {
+  .about__text p {
+    white-space: normal;
+  }
 }
 /*# sourceMappingURL=about.css.map */
